@@ -10,26 +10,22 @@ export default function Maincomp () {
 
     useEffect ( () => {
         var url = 'http://newsapi.org/v2/top-headlines?country=id&apiKey=4b7de77b289f46409a505edad4e9aa50';
-        console.log(url);
         var req = new Request(url);
         fetch(req)
         .then(response => response.json())
         .then(data => {
             const artikel = data.articles;
-            console.log(artikel);
             setHeadline(artikel)
         });
     },[])
 
     function searchnews() {
         var url = 'http://newsapi.org/v2/everything?q='+search+'&from=2022-12-08&sortBy=popularity&apiKey=4b7de77b289f46409a505edad4e9aa50';
-        console.log(url);
         var req = new Request(url);
         fetch(req)
         .then(response => response.json())
         .then(data => {
             const artikel = data.articles;
-            console.log(artikel);
             setHeadline(artikel)
         });
     }
