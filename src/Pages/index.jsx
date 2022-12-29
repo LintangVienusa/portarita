@@ -6,6 +6,7 @@ import Main from "../Components/Body/mainLayout";
 export default function Maincomp () {
     const [search,setSearch] = useState('')
     const [news_headline, setHeadline] = useState([])
+    const [filteredNews, setFilteredNews] = useState([])
 
     useEffect ( () => {
         var url = 'http://newsapi.org/v2/top-headlines?country=id&apiKey=4b7de77b289f46409a505edad4e9aa50';
@@ -32,6 +33,10 @@ export default function Maincomp () {
             setHeadline(artikel)
         });
     }
+
+    useEffect(()=>{
+        setFilteredNews(news_headline.filter(e=>e.urlToImage != null && e.author != null))
+    }, [news_headline])
     
     return (
         <Main>
@@ -53,11 +58,10 @@ export default function Maincomp () {
 
                 <Row className="mt-4 justify-content" id="news-headline">
                     {
-                        news_headline.map(e =>{
-                            console.log(e)
-                            if(e.urlToImage != null && e.author != null) {
+                        filteredNews.map((e,index) =>{
+                            // if(e.urlToImage != null && e.author != null) {
                                 return (
-                                    <Col lg={3} className="my-3">
+                                    <Col key={index} lg={3} className="my-3">
                                         <Card>
                                             <Card.Img variant="top" src={e.urlToImage} />
                                             <Card.Body>
@@ -69,7 +73,7 @@ export default function Maincomp () {
                                         </Card>
                                     </Col>
                                 )
-                            }
+                            // }
                         })
                     }
                 </Row>
