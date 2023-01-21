@@ -64,7 +64,7 @@ export default function Maincomp () {
                                                 <Card.Title>{e.title}</Card.Title>
                                                 <Card.Subtitle>{e.author}</Card.Subtitle>
                                                 <Card.Text>{e.description} ...</Card.Text>
-                                                <Button variant="primary">Go somewhere</Button>
+                                                <Button variant="primary">Read More</Button>
                                             </Card.Body>
                                         </Card>
                                     </Col>
