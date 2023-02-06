@@ -4,11 +4,12 @@ import { FaSearch } from 'react-icons/fa';
 import Main from "../Components/Body/mainLayout";
 
 export default function Maincomp () {
+    
     const [search,setSearch] = useState('')
     const [news_headline, setHeadline] = useState([])
     const [filteredNews, setFilteredNews] = useState([])
 
-    useEffect ( () => {
+    useEffect (() => {
         var url = 'http://newsapi.org/v2/top-headlines?country=id&apiKey=4b7de77b289f46409a505edad4e9aa50';
         var req = new Request(url);
         fetch(req)
@@ -17,7 +18,7 @@ export default function Maincomp () {
             const artikel = data.articles;
             setHeadline(artikel)
         });
-    },[])
+    }, [])
 
     function searchnews() {
         var url = 'http://newsapi.org/v2/everything?q='+search+'&from=2022-12-08&sortBy=popularity&apiKey=4b7de77b289f46409a505edad4e9aa50';
@@ -33,6 +34,7 @@ export default function Maincomp () {
     useEffect(()=>{
         setFilteredNews(news_headline.filter(e=>e.urlToImage != null && e.author != null))
     }, [news_headline])
+    
     
     return (
         <Main>
