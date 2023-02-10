@@ -10,9 +10,8 @@ import About from './Pages/About';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
     <BrowserRouter>
-      <Routes>
+      <Routes>  
         <Route path='/' element={ <App /> } />
         <Route path='Home' element={ <App /> } />
         <Route path='Features' element={ <Features /> } />

@@ -2,7 +2,7 @@ import React from "react";
 import './Styling/style.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Nav, Navbar } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const MyNav = () => {
     return (
@@ -19,6 +19,8 @@ const MyNav = () => {
                     <Nav.Link>
                         <Link className="customLink" to="/About">About</Link>
                     </Nav.Link>
+
+                    <Outlet />
                 </Nav>
                 
             </Container>
