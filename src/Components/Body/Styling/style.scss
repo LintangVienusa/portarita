@@ -9,3 +9,34 @@ $plainwhite: #ffff;
 .headTittle {
     margin-top: 2em;
 }
+
+.customLink {
+    color: $plainwhite;
+    text-decoration: none;
+}
+
+.customLink:hover{
+    color: #bdbdbd;
+    text-decoration: none;
+}
+
+.myButton{
+    background-color: $defcolor;
+    color: $plainwhite;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+.myButton:hover{
+    background-color: #0b6452;
+    color: $plainwhite;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}

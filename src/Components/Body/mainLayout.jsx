@@ -9,6 +9,7 @@ export default class Main extends React.Component {
                 <div className="content">
                     {this.props.children}
                 </div>
+
             </>
         )
     }

@@ -1,13 +1,26 @@
 import React from "react";
 import './Styling/style.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 
 const MyNav = () => {
     return (
         <Navbar expand="lg" variant="dark" className="navBar">
             <Container>
-                <Navbar.Brand href="#"><h3><b>Portarita</b></h3></Navbar.Brand>
+                <Navbar.Brand><h3><b>Portarita</b></h3></Navbar.Brand>
+                <Nav className="me-auto">
+                    <Nav.Link>
+                        <Link className="customLink" to="/Home">Home</Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                        <Link className="customLink" to="/Features"> Features </Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                        <Link className="customLink" to="/About">About</Link>
+                    </Nav.Link>
+                </Nav>
+                
             </Container>
         </Navbar>
     )
